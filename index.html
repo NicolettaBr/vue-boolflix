@@ -15,11 +15,41 @@
     <div id="root">
 
         <header>
+            <!--search section-->
+
+            <div class="search-section">
+                <button @click="search" class="btn">Cerca</button>
+                <input v-model="userResearch" type="text" class="input-text">
+            </div>
             
-            <button class="btn">Cerca</button>
-            <input v-model="userResearch" type="text" class="input-text">
-            <div> </div>
+            <!--fine search section-->
         </header>
+
+        <main>
+            <div class="container-cards">
+                
+                <!--card movie-->
+                <div v-for="movie in arrayMovies" class="card">
+                    <div class="title">{{movie.title}} </div>
+                    <div class="original-title">{{movie.original_title}}</div>
+                    <div class="language">
+                        {{movie.original_language}}</div>
+                    <div class="vote">{{movie.vote_average}}</div>
+                </div>
+                <!--fine card movie-->
+
+                <!--card serie-->
+                <div v-for="serie in arraySeries" class="card">
+                    <div class="title">{{serie.name}} </div>
+                    <div class="original-title">{{serie.original_name}}</div>
+                    <div class="language">{{serie.original_language}}</div>
+                    <div class="vote">{{serie.vote_average}}</div>
+                </div>
+                <!--fine card serie-->
+
+            </div>
+
+        </main>
 
 
 
