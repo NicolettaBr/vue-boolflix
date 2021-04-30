@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boolflix</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -36,8 +37,33 @@
                     <div class="language">{{movie.original_language}}</div>
                     <div class="vote">{{movie.vote_average}}</div>
 
+                    <!--stars-vote-->
+                    <div class="stars-vote">
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+
+                    <!--flag-->
                    <div class="flag"> 
                        <img :src="StampFlag(movie.original_language)" alt="">
+                   </div>
+
+                   <!--cover-->
+                   <div class="cover"> 
+                        <img :src=" 'https://image.tmdb.org/t/p/w342' + movie.backdrop_path" alt="">
                    </div>
 
                 </div> 
@@ -50,10 +76,31 @@
                     <div class="language">{{serie.original_language}}</div>
                     <div class="vote">{{serie.vote_average}}</div>
 
+                    <!--stars-vote-->
+                    <div class="stars-vote addVote(serie.vote_average)">
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <span class="star">
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+
+                    <!--flag-->
                     <div class="flag"> 
                         <img :src="StampFlag(serie.original_language)" alt="">
                     </div>
 
+                    <!--cover-->
                     <div class="cover"> 
                         <img :src=" 'https://image.tmdb.org/t/p/w342' + serie.backdrop_path" alt="">
                     </div>

@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 /*HEADER*/
 header{
     background-color: black;
@@ -29,7 +31,7 @@ header{
     
 }
 
-.card img{
+.card .flag img{
     width: 20px;
     height: 20px;
 }

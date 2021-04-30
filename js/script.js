@@ -7,7 +7,7 @@ var app = new Vue(
             arraySeries:[],
             flagIt: 'https://cdn.countryflags.com/thumbs/italy/flag-400.png',
             flagEn: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU',
-           urlBaseImg: 'https://image.tmdb.org/t/p/w342'
+            
         },
 
         methods:{
@@ -51,7 +51,6 @@ var app = new Vue(
                 
                     /*resetta barra input*/ 
                     this.userResearch = '';  
-
                 }
 
             },
@@ -69,6 +68,11 @@ var app = new Vue(
                 };
                 
             },
+
+            //popolare le stelle in base al punteggio
+            addVote(voteInt){
+               console.log(voteInt);
+            }
 
 
         },
