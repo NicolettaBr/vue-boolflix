@@ -58,7 +58,7 @@
 
                     <!--flag-->
                    <div class="flag"> 
-                       <img :src="StampFlag(movie.original_language)" alt="">
+                       <img :src="getFlag(movie.original_language)" alt="">
                    </div>
 
                    <!--cover-->
@@ -77,7 +77,7 @@
                     <div class="vote">{{serie.vote_average}}</div>
 
                     <!--stars-vote-->
-                    <div class="stars-vote addVote(serie.vote_average)">
+                    <div class="stars-vote">
                         <span class="star">
                             <i class="fas fa-star"></i>
                         </span>
@@ -97,12 +97,12 @@
 
                     <!--flag-->
                     <div class="flag"> 
-                        <img :src="StampFlag(serie.original_language)" alt="">
+                        <img :src="getFlag(serie.original_language)" alt="">
                     </div>
 
                     <!--cover-->
                     <div class="cover"> 
-                        <img :src=" 'https://image.tmdb.org/t/p/w342' + serie.backdrop_path" alt="">
+                        <img :src="getPoster(serie.backdrop_path)" alt="">
                     </div>
                     
                 </div>
