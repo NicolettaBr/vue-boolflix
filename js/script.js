@@ -76,9 +76,9 @@ var app = new Vue(
 
                     return this.imgNotFound;
 
-                }else if( url == this.arraySeries.backdrop_path){
+                }else {
                     
-                    return "'https://image.tmdb.org/t/p/w342' + this.arraySeries.backdrop_path";
+                    return 'https://image.tmdb.org/t/p/w342/' + url;
                 }
             }
 
