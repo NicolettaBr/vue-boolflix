@@ -4,7 +4,9 @@ var app = new Vue(
         data: {
             userResearch: '',
             arrayMovies: [],
-            arraySeries:[]
+            arraySeries:[],
+            flagIt: '"img/flag-ita.png',
+            flagEn: '"img/flag-en.png'
         },
 
         methods:{
@@ -48,8 +50,9 @@ var app = new Vue(
                 this.userResearch = '';
                }
 
-                
-            }
+            },
+
+
 
         },
 

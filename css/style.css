@@ -28,3 +28,8 @@ header{
     margin: 15px;
     
 }
+
+.card img{
+    width: 20px;
+    height: 20px;
+}
