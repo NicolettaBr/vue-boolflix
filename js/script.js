@@ -5,8 +5,9 @@ var app = new Vue(
             userResearch: '',
             arrayMovies: [],
             arraySeries:[],
-            flagIt: '"img/flag-ita.png',
-            flagEn: '"img/flag-en.png'
+            flagIt: 'https://cdn.countryflags.com/thumbs/italy/flag-400.png',
+            flagEn: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU'
+            
         },
 
         methods:{
@@ -51,7 +52,19 @@ var app = new Vue(
                }
 
             },
+            //stampare flags in base alla lingua
+            StampFlag(language){
+                
+                if(language == 'it'){
 
+                    return this.flagIt;
+                    
+                }else if(language == 'en'){
+
+                    return this.flagEn;
+                };
+                
+            },
 
 
         },

@@ -35,13 +35,11 @@
                     <div class="language">{{movie.original_language}}</div>
                     <div class="vote">{{movie.vote_average}}</div>
 
-                    <div v-if="movie.original_language == 'it' ">
-                        <img src="img/flag-ita.png" alt="">
-                    </div>
+                   <div> 
+                       <img :src="StampFlag(movie.original_language)" alt="">
+                   </div>
 
-                    <div v-if="movie.original_language == 'en' ">
-                        <img src="img/flag-en.png" alt="">
-                    </div>
+                    
 
                 </div>
                 <!--fine card movie-->
@@ -53,13 +51,12 @@
                     <div class="language">{{serie.original_language}}</div>
                     <div class="vote">{{serie.vote_average}}</div>
 
-                    <div v-if="serie.original_language == 'it' ">
-                        <img src="img/flag-ita.png" alt="">
+                    <div> 
+                        <img :src="StampFlag(serie.original_language)" alt="">
                     </div>
+                    
     
-                    <div v-if="serie.original_language == 'en' ">
-                        <img src="img/flag-en.png" alt="">
-                    </div>
+                   
                 </div>
 
                 
