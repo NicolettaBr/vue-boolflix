@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boolflix</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
@@ -16,8 +18,9 @@
     <div id="root">
 
         <header>
-            <!--search section-->
 
+            <div class="logo">boolflix</div>
+            <!--search section-->
             <div class="search-section">
                 <button @click="search" class="btn">Cerca</button>
                 <input v-model="userResearch" type="text" class="input-text">
@@ -28,39 +31,45 @@
         </header>
 
         <main>
-            <div class="container-cards">
+            <div class="container-cards clearfix">
                 
                 <!--card movie-->
                 <div v-for="movie in arrayMovies" class="card">
-                    <div class="title">{{movie.title}} </div>
-                    <div class="original-title">{{movie.original_title}}</div>
-                    <div class="language">{{movie.original_language}}</div>
-                    <div class="vote">{{movie.vote_average}}</div>
+                    <!--card-info-->
+                    <div class="card-info">
 
-                    <!--stars-vote-->
-                    <div class="stars-vote">
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
+                        <div class="title"><strong>Titolo: </strong>{{movie.title}} </div>
+                        <div class="original-title"><strong>Titolo originale: </strong>{{movie.original_title}}</div>
+                        <div class="language"><strong>Lingua: </strong>{{movie.original_language}}</div>
+                        <div class="vote"><strong>Voto: </strong>{{movie.vote_average}}</div>
+                        <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
+
+                        <!--stars-vote-->
+                        <div class="stars-vote">
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+
+                        <!--flag-->
+                        <div class="flag"> 
+                            <img :src="getFlag(movie.original_language)" alt="">
+                        </div>
+
                     </div>
-
-                    <!--flag-->
-                   <div class="flag"> 
-                       <img :src="getFlag(movie.original_language)" alt="">
-                   </div>
-
+                    
                    <!--cover-->
                    <div class="cover"> 
                     <img :src="getPoster(movie.backdrop_path)" alt="">
@@ -71,35 +80,41 @@
 
                 <!--card serie-->
                 <div v-for="serie in arraySeries" class="card">
-                    <div class="title">{{serie.name}} </div>
-                    <div class="original-title">{{serie.original_name}}</div>
-                    <div class="language">{{serie.original_language}}</div>
-                    <div class="vote">{{serie.vote_average}}</div>
+                    <!--card-info-->
+                    <div class="card-info">
 
-                    <!--stars-vote-->
-                    <div class="stars-vote">
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span class="star">
-                            <i class="fas fa-star"></i>
-                        </span>
+                        <div class="title"><strong>Titolo: </strong> {{serie.name}} </div>
+                        <div class="original-title"><strong>Titolo originale: </strong>{{serie.original_name}}</div>
+                        <div class="language"><strong>Lingua: </strong>{{serie.original_language}}</div>
+                        <div class="vote"><strong>Voto: </strong>{{serie.vote_average}}</div>
+                        <div class="overview"><strong>Overview: </strong>{{serie.overview}}</div>
+
+                        <!--stars-vote-->
+                        <div class="stars-vote">
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+
+                        <!--flag-->
+                        <div class="flag"> 
+                            <img :src="getFlag(serie.original_language)" alt="">
+                        </div>
+
                     </div>
-
-                    <!--flag-->
-                    <div class="flag"> 
-                        <img :src="getFlag(serie.original_language)" alt="">
-                    </div>
-
+                    
                     <!--cover-->
                     <div class="cover"> 
                         <img :src="getPoster(serie.backdrop_path)" alt="">
