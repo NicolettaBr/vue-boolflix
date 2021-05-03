@@ -11,7 +11,7 @@ body{
 
 img{
     width: 100%;
-    height: 100%;
+    height: 200px;
 }
 
 /*HEADER*/
@@ -53,8 +53,7 @@ header{
     position: relative;
     width: 400px;
     overflow-y: auto;
-    height: 300px;
-
+   
 }
 
 .card .flag img{
@@ -82,4 +81,12 @@ header{
 
 .card:hover .cover{
     display: none;
+}
+
+.stars-vote{
+    display: inline-block;
+}
+
+.active{
+    color: yellow;
 }

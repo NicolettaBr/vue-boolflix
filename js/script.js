@@ -7,7 +7,8 @@ var app = new Vue(
             arraySeries:[],
             flagIt: 'https://cdn.countryflags.com/thumbs/italy/flag-400.png',
             flagEn: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU',
-            imgNotFound: 'https://bitsofco.de/content/images/2018/12/broken-1.png'
+            imgNotFound: 'https://bitsofco.de/content/images/2018/12/broken-1.png',
+            
         },
 
         methods:{
@@ -80,6 +81,10 @@ var app = new Vue(
                     
                     return 'https://image.tmdb.org/t/p/w342/' + url;
                 }
+            },
+
+            getInteger(decimal){
+
             }
 
 

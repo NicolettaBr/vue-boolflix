@@ -41,27 +41,17 @@
                         <div class="title"><strong>Titolo: </strong>{{movie.title}} </div>
                         <div class="original-title"><strong>Titolo originale: </strong>{{movie.original_title}}</div>
                         <div class="language"><strong>Lingua: </strong>{{movie.original_language}}</div>
-                        <div class="vote"><strong>Voto: </strong>{{movie.vote_average}}</div>
+                        <div class="vote"><strong>Voto: </strong>{{movie.vote_average / 2}}</div>
                         <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
 
                         <!--stars-vote-->
-                        <div class="stars-vote">
-                            <span class="star">
+                        <div v-for="star in 5" class="stars-vote " :class="{ 'active' : {{movie.vote_average / 2}}  }" >
+                            <span class="star-element">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
+                           
                         </div>
+
 
                         <!--flag-->
                         <div class="flag"> 
