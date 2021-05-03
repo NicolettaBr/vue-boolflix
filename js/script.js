@@ -8,7 +8,7 @@ var app = new Vue(
             flagIt: 'https://cdn.countryflags.com/thumbs/italy/flag-400.png',
             flagEn: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU',
             imgNotFound: 'https://bitsofco.de/content/images/2018/12/broken-1.png',
-            
+
         },
 
         methods:{
@@ -83,9 +83,17 @@ var app = new Vue(
                 }
             },
 
-            getInteger(decimal){
+            //ritorna voto arrotondato per eccesso ad un intero
+           getRounded(number){
+               //console.log(number);
 
-            }
+               let numberRounded = Math.ceil(number);
+               //console.log(numberRounded);
+
+               return numberRounded;
+           },
+
+          
 
 
         },

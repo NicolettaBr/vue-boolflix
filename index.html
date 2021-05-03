@@ -45,12 +45,15 @@
                         <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
 
                         <!--stars-vote-->
-                        <div v-for="star in 5" class="stars-vote " :class="{ 'active' : {{movie.vote_average / 2}}  }" >
+                        <div v-for="star in 5 " class="stars-vote" >
+                            
                             <span class="star-element">
                                 <i class="fas fa-star"></i>
                             </span>
                            
                         </div>
+
+                        <div>{{getRounded(movie.vote_average / 2)}} </div>
 
 
                         <!--flag-->
