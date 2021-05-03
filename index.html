@@ -45,7 +45,7 @@
                         <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
 
                         <!--stars-vote-->
-                        <div v-for="star in 5 " class="stars-vote" >
+                        <div v-for="star in {{getRounded(movie.vote_average / 2)}} " class="stars-vote" >
                             
                             <span class="star-element">
                                 <i class="fas fa-star"></i>
@@ -53,8 +53,7 @@
                            
                         </div>
 
-                        <div>{{getRounded(movie.vote_average / 2)}} </div>
-
+                        
 
                         <!--flag-->
                         <div class="flag"> 
