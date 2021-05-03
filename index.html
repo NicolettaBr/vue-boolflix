@@ -45,7 +45,15 @@
                         <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
 
                         <!--stars-vote-->
-                        <div v-for="star in {{getRounded(movie.vote_average / 2)}} " class="stars-vote" >
+                        <div v-for="star in getRounded(movie.vote_average) " class="stars-vote active" >
+                            
+                            <span class="star-element">
+                                <i class="fas fa-star"></i>
+                            </span>
+                           
+                        </div>
+
+                        <div v-for="star in (5 - getRounded(movie.vote_average)) " class="stars-vote" >
                             
                             <span class="star-element">
                                 <i class="fas fa-star"></i>
@@ -82,22 +90,20 @@
                         <div class="overview"><strong>Overview: </strong>{{serie.overview}}</div>
 
                         <!--stars-vote-->
-                        <div class="stars-vote">
-                            <span class="star">
+                        <div v-for="star in getRounded(serie.vote_average) " class="stars-vote active" >
+                            
+                            <span class="star-element">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="star">
+                           
+                        </div>
+
+                        <div v-for="star in (5 - getRounded(serie.vote_average)) " class="stars-vote" >
+                            
+                            <span class="star-element">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
+                           
                         </div>
 
                         <!--flag-->

@@ -85,10 +85,12 @@ var app = new Vue(
 
             //ritorna voto arrotondato per eccesso ad un intero
            getRounded(number){
-               //console.log(number);
+               console.log(number);
+               let numberDivided = number / 2;
+               console.log(numberDivided);
 
-               let numberRounded = Math.ceil(number);
-               //console.log(numberRounded);
+               let numberRounded = Math.ceil(numberDivided);
+               console.log(numberRounded);
 
                return numberRounded;
            },
