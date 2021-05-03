@@ -63,6 +63,7 @@ header{
 
 .flag{
     margin-top: 10px ;
+    display: inline-block;
 }
 
 .card-info{

@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="root">
-
+        <!--HEADER-->
         <header>
 
             <div class="logo">boolflix</div>
@@ -29,45 +29,53 @@
             <!--fine search section-->
             
         </header>
+        <!--FINE HEADER-->
 
+        <!--MAIN-->
         <main>
             <div class="container-cards clearfix">
                 
-                <!--card movie-->
+                <!--CARD MOVIE-->
                 <div v-for="movie in arrayMovies" class="card">
                     <!--card-info-->
                     <div class="card-info">
 
                         <div class="title"><strong>Titolo: </strong>{{movie.title}} </div>
+
                         <div class="original-title"><strong>Titolo originale: </strong>{{movie.original_title}}</div>
-                        <div class="language"><strong>Lingua: </strong>{{movie.original_language}}</div>
-                        <div class="vote"><strong>Voto: </strong>{{movie.vote_average / 2}}</div>
+
+                        <div class="language"><strong>Lingua: </strong>{{movie.original_language}}
+                            <!--flag-->
+                            <div class="flag"> 
+                                <img :src="getFlag(movie.original_language)" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="vote"><strong>Voto: </strong>
+                            <!--vote-stars-->
+                            <div v-for="star in getRounded(movie.vote_average) " class="stars-vote active" >
+                            
+                                <span class="star-element">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                               
+                            </div>
+    
+                            <div v-for="star in (5 - getRounded(movie.vote_average)) " class="stars-vote" >
+                                
+                                <span class="star-element">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                               
+                            </div>
+                            <!--end vote-stars-->
+                        </div>
+
                         <div class="overview"><strong>Overview: </strong>{{movie.overview}}</div>
 
-                        <!--stars-vote-->
-                        <div v-for="star in getRounded(movie.vote_average) " class="stars-vote active" >
-                            
-                            <span class="star-element">
-                                <i class="fas fa-star"></i>
-                            </span>
-                           
-                        </div>
-
-                        <div v-for="star in (5 - getRounded(movie.vote_average)) " class="stars-vote" >
-                            
-                            <span class="star-element">
-                                <i class="fas fa-star"></i>
-                            </span>
-                           
-                        </div>
 
                         
-
-                        <!--flag-->
-                        <div class="flag"> 
-                            <img :src="getFlag(movie.original_language)" alt="">
-                        </div>
-
                     </div>
                     
                    <!--cover-->
@@ -76,40 +84,47 @@
                    </div>
 
                 </div> 
-                <!--fine card movie-->
+                <!--FINE CARD MOVIE-->
 
-                <!--card serie-->
+                <!--CARD SERIE-->
                 <div v-for="serie in arraySeries" class="card">
                     <!--card-info-->
                     <div class="card-info">
 
                         <div class="title"><strong>Titolo: </strong> {{serie.name}} </div>
+
                         <div class="original-title"><strong>Titolo originale: </strong>{{serie.original_name}}</div>
-                        <div class="language"><strong>Lingua: </strong>{{serie.original_language}}</div>
-                        <div class="vote"><strong>Voto: </strong>{{serie.vote_average}}</div>
+
+                        <div class="language"><strong>Lingua: </strong>{{serie.original_language}}
+
+                            <!--flag-->
+                            <div class="flag"> 
+                                <img :src="getFlag(serie.original_language)" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="vote"><strong>Voto: </strong>
+                            <!--vote-stars-->
+                            <div v-for="star in getRounded(serie.vote_average) " class="stars-vote active" >
+                            
+                                <span class="star-element">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                               
+                            </div>
+    
+                            <div v-for="star in (5 - getRounded(serie.vote_average)) " class="stars-vote" >
+                                
+                                <span class="star-element">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                               
+                            </div>
+                            <!--end vote-stars-->
+                        </div>
+
                         <div class="overview"><strong>Overview: </strong>{{serie.overview}}</div>
-
-                        <!--stars-vote-->
-                        <div v-for="star in getRounded(serie.vote_average) " class="stars-vote active" >
-                            
-                            <span class="star-element">
-                                <i class="fas fa-star"></i>
-                            </span>
-                           
-                        </div>
-
-                        <div v-for="star in (5 - getRounded(serie.vote_average)) " class="stars-vote" >
-                            
-                            <span class="star-element">
-                                <i class="fas fa-star"></i>
-                            </span>
-                           
-                        </div>
-
-                        <!--flag-->
-                        <div class="flag"> 
-                            <img :src="getFlag(serie.original_language)" alt="">
-                        </div>
 
                     </div>
                     
@@ -119,14 +134,12 @@
                     </div>
                     
                 </div>
-                
-                <!--fine card serie-->
+                <!--FINE CARD SERIE-->
 
             </div>
 
         </main>
-
-
+        <!--FINE-MAIN-->
 
     </div>
     
