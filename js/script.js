@@ -5,10 +5,6 @@ var app = new Vue(
             userResearch: '',
             arrayMovies: [],
             arraySeries:[],
-            flagIt: 'https://cdn.countryflags.com/thumbs/italy/flag-400.png',
-            flagEn: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU',
-            imgNotFound: 'https://bitsofco.de/content/images/2018/12/broken-1.png',
-
         },
 
         methods:{
@@ -60,22 +56,22 @@ var app = new Vue(
             getFlag(language){
                 
                 if(language == 'it'){
-
-                    return this.flagIt;
+                    let flagIt = 'https://cdn.countryflags.com/thumbs/italy/flag-400.png';
+                    return flagIt;
                     
                 }else if(language == 'en'){
-
-                    return this.flagEn;
+                    let flagEn = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hGaA58A_koepgHCIREg0Dt6ZIx6bbGHavyPXi4u5wIbs0l7GggJVZmbI7gIP7Wta-pE&usqp=CAU';
+                    return flagEn;
                 };
                 
             },
 
-            //ritorna flags in base alla lingua
+            //ritorna immagine di copertina, se non presente torna img not found
             getPoster(url){
 
                 if(url == null ){
-
-                    return this.imgNotFound;
+                    let imgNotFound = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
+                    return imgNotFound;
 
                 }else {
                     
@@ -95,14 +91,10 @@ var app = new Vue(
                return numberRounded;
            },
 
-          
-
-
         },
 
         mounted(){
             
-
         }
     },
 ) 
